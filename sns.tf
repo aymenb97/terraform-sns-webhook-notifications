@@ -1,7 +1,7 @@
 resource "aws_sns_topic" "sns_notify" {
   name = "SNS-Notify"
-
 }
+
 resource "aws_sns_topic_subscription" "lambda" {
   count     = var.enable_lambda_sub ? 1 : 0
   topic_arn = aws_sns_topic.sns_notify.arn
