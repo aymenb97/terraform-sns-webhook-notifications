@@ -47,3 +47,11 @@ resource "aws_iam_role_policy_attachment" "this" {
   role       = aws_iam_role.lambda_exec.name
   policy_arn = each.key
 }
+resource "aws_lambda_permission" "this" {
+  statement_id  = "AllowExecutionFromSNS"
+  action        = "lambda:InvokeFunction"
+  function_name = aws_lambda_function.lambda_webhook.arn
+  principal     = "sns.amazonaws.com"
+  source_arn    = aws_sns_topic.sns_notify.arn
+
+}
