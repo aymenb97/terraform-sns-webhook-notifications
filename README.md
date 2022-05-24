@@ -4,8 +4,11 @@ This module creates an SNS topic, adds two subscriptions to it (Email and Lambda
 
 ## Features:
 1- Creates an amazon SNS Topic
+
 2- adds en email subscription
+
 3- Creates a lambda function to post to a slack webhook.
+
 4- Creates a Cloudwatch alarm to publish to the SNS topic.
 
 ## Architecture:
